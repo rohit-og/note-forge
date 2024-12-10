@@ -20,7 +20,7 @@ function LiveCursorProvider({ children }: { children: React.ReactNode }) {
     <div onPointerMove={handlePointerMove} onPointerLeave={handlePointerLeave}>
       {others
         .filter((other) => other.presence.cursor !== null)
-        .map((other) => (
+        .map(({connectionId, presence, info}) => (
           <FollowPointer
             key={connectionId}
             info={info}
